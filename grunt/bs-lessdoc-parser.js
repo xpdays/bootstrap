@@ -166,8 +166,7 @@ Parser.prototype.parseSection = function () {
   var docstring = this._tokenizer.shift();
   if (docstring instanceof SectionDocstring) {
     section.docstring = docstring;
-  }
-  else {
+  } else {
     this._tokenizer.unshift(docstring);
   }
   this.parseSubSections(section);
@@ -183,8 +182,7 @@ Parser.prototype.parseSubSections = function (section) {
         // Presume an implicit initial subsection
         subsection = new SubSection('');
         this.parseVars(subsection);
-      }
-      else {
+      } else {
         break;
       }
     }
